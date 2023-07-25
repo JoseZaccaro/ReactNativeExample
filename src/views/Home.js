@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableHighlight, ImageBackground, Button } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableHighlight, ImageBackground, Button, TextInput } from 'react-native'
 import React from 'react'
 import logo from '../../assets/Logo.png'
 import menu from '../../assets/Menu.png'
 import background from '../../assets/background.jpg'
+import { storage } from '../utils/asyncStorage'
 
 const Home = ({ navigation }) => {
+
 
     return (
         <ImageBackground source={background} style={styles.container}>
@@ -26,6 +28,7 @@ const Home = ({ navigation }) => {
                     color={'#4338CA'}
                     onPress={() => navigation.navigate('Sign In')}
                 />
+
             </View>
         </ImageBackground>
     )
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'space-between',
         flexDirection: 'row',
-        padding: 10
+        padding: 10,
     },
     img: {
         height: 50,
@@ -68,7 +71,9 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'center',
         letterSpacing: 1.7
-    }
+    },
+    
+
 
 });
 
