@@ -1,20 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
+import 'react-native-gesture-handler';
+import Home from './src/views/Home';
+import StackNavigator from './src/navigators/stackNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import DrawerNavigator from './src/navigators/drawerNavigator';
+
 
 export default function App() {
+  // TouchableHighlight
+  // TouchableOpacity
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar hidden />
+      {/* <StackNavigator /> */}
+      <DrawerNavigator />
+    </NavigationContainer>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
+  imagenLogo: {
+    height: 60,
+    objectFit: 'contain',
+  },
+  navbar: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingHorizontal: 10
+  },
+  textWhite: {
+    color: 'white',
+  },
+  title: {
+    fontSize: 32,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  subtitle: {
+    fontSize: 16,
+    textAlign: 'center'
+  },
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+
+
 });
